@@ -13,6 +13,7 @@ import com.simulator.distributions.PacketDistributions;
 import com.simulator.enums.GridTypes;
 import com.simulator.enums.SimulationTypes;
 import com.simulator.packets.Packets;
+import com.simulator.packets.PublishPacket;
 import com.simulator.topology.Grid;
 import com.simulator.trace.*;
 import java.util.concurrent.PriorityBlockingQueue;
@@ -56,6 +57,8 @@ import java.util.Properties;
 	
 	private static int hold = 0;
 	
+	private static int startArrivals = 0;
+	
 	private GridTypes gridType = GridTypes.SIMULATION_GRID_BRITE;
 
 	private static SimulationTypes distributionType = SimulationTypes.SIMULATION_DISTRIBUTION_DEFAULT;
@@ -90,6 +93,7 @@ import java.util.Properties;
 			Arrivals.setSegmentSize(Integer.parseInt(prop.getProperty("ccn.sizeOf.segment")));
 			setMaxSimulatedPackets(Integer.parseInt(prop.getProperty("ccn.no.simulationpackets")));			
 			Packets.setDataDumpFile(prop.getProperty("dumpfile.packets"));			
+			PublishPacket.setDataDumpFile(prop.getProperty("publishdumpfile.packets"));
 			setGridType(GridTypes.valueOf(prop.getProperty("ccn.topology")));			
 			setDistributionType (SimulationTypes.valueOf(prop.getProperty("ccn.object.distribution")));			
 			setObjectSegmentation (SimulationTypes.valueOf(prop.getProperty("ccn.object.segmentation")));			
@@ -160,7 +164,7 @@ import java.util.Properties;
 			 * Arrivals object is created along with setting of the frequency with which it will be reinvoked again, and again ..
 			 * Moreover, the first interest packet is created. 
 			 * */
-			Arrivals A = new Arrivals();
+
 			
 			/* If Cache and FIB trace is required, then we create the CacheFIBTrace process which is invoked intermittently to print
 			 * the sizes of all caches and fibs.*/
@@ -169,13 +173,31 @@ import java.util.Properties;
 				B.ActivateAt(1.0);
 			}
 			
+			Scheduler.startSimulation();
+			
+			if (SimulationTypes.SIMULATION_FIB == SimulationController.getFibAvailability())
+			{
+				//Each router will start publishing
+				for(int i = 0; i < Grid.getGridSize(); i++)
+				{
+					Grid.getRouter(i).Publish();
+				}
+				
+				// This is to check if publishing is completed.
+				while(startArrivals != 1)
+					Hold(2);
+				
+				System.out.println("Done with publishing. So starting the arrivals");
+				
+			}
+			
+			Arrivals A = new Arrivals();
 			/* The following call will place the Arrival object onto the JavaSim scheduler's queue. */
 			A.Activate();
 			
 			top = new TimeOutProcess();
 
 			/* The simulation is started, and JavaSim scheduler comes to life */
-			Scheduler.startSimulation();
 			
 			/**
 			 //TODO
@@ -438,6 +460,14 @@ import java.util.Properties;
 
 	public static void setRetransNuance (double tempNuance) {
 		retransNuance = tempNuance;
+	}
+	
+	public synchronized static void setstartArrivals (int startArrivals) {
+		SimulationController.startArrivals = startArrivals;
+	}
+	
+	public synchronized static int getstartArrivals () {
+		return startArrivals;
 	}
 	
 

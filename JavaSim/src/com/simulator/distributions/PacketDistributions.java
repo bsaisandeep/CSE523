@@ -1,8 +1,11 @@
 package com.simulator.distributions;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
 import java.util.Random;
 import java.util.ArrayList;
 
@@ -12,6 +15,7 @@ import java.util.ArrayList;
 
 import com.simulator.ccn.CCNCache;
 import com.simulator.ccn.CCNRouter;
+import com.simulator.ccn.ObjectListEntry;
 import com.simulator.controller.SimulationController;
 import com.simulator.enums.SimulationTypes;
 import com.simulator.packets.DataPacket;
@@ -99,6 +103,9 @@ public class PacketDistributions {
 			CCNCache routerLocalCache = router.getLocalStorage();
 			pack.setLocality(true);
 			routerLocalCache.addToCache(pack);
+			List<ObjectListEntry> routerObjectList =router.getObjectList();
+			ObjectListEntry obj = new ObjectListEntry (pack.getPacketId(), 1);
+			routerObjectList.add(obj);
 		}
 	}
 	
@@ -130,6 +137,9 @@ public class PacketDistributions {
 			CCNCache routerLocalCache = router.getLocalStorage();
 			pack.setLocality(true);
 			routerLocalCache.addToCache(pack);
+			List<ObjectListEntry> routerObjectList =router.getObjectList();
+			ObjectListEntry obj = new ObjectListEntry (pack.getPacketId(), 1);
+			routerObjectList.add(obj);
 		}
 	}
 	
@@ -165,6 +175,9 @@ public class PacketDistributions {
 			CCNCache routerLocalCache = router.getLocalStorage();
 			pac.setLocality(true);
 			routerLocalCache.addToCache(pac);
+			List<ObjectListEntry> routerObjectList =router.getObjectList();
+			ObjectListEntry obj = new ObjectListEntry (pac.getPacketId(), 1);
+			routerObjectList.add(obj);
 			//log.info("Creating Data Object:"+line);
 		}
 		rd.close();
@@ -245,7 +258,9 @@ public class PacketDistributions {
 			CCNCache routerLocalCache = router.getLocalStorage();
 			pack.setLocality(true);
 			routerLocalCache.addToCache(pack);
-
+			List<ObjectListEntry> routerObjectList =router.getObjectList();
+			ObjectListEntry obj = new ObjectListEntry (pack.getPacketId(), 1);
+			routerObjectList.add(obj);
 			//log.info("Creating Data Object:"+line);
 		}	
 		

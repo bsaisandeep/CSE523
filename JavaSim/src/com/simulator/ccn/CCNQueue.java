@@ -2,7 +2,9 @@ package com.simulator.ccn;
 import java.util.LinkedList;
 //import org.apache.log4j.Logger;
 
+import com.simulator.enums.PacketTypes;
 import com.simulator.packets.Packets;
+import com.simulator.packets.PublishPacket;
 import com.simulator.topology.Grid;
 
 /*
@@ -44,7 +46,11 @@ public class CCNQueue {
 		/* We need to record packet is sent into the queue 
 		 * Packets.dumpStatistics(packet);
 		 * */
-		Packets.dumpStatistics(packet,"ENQUEUE");
+		if(packet.getPacketType() == PacketTypes.PACKET_TYPE_PUBLISH)
+			PublishPacket.publishdump((PublishPacket)packet, "ENQUEUE");
+		
+		else
+			Packets.dumpStatistics(packet,"ENQUEUE");
 		
 		/* Calling router activate every time a packet is added to its queue to make sure its on the scheduling queue */	 
 		CCNRouter rtr = Grid.getRouter(getNodeId());

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;JavaSim/resources/First.brite&apos; to &apos;First_wali.brite&apos;" description="Rename resource &apos;First.brite&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="resources/First.brite" name="First_wali.brite" stamp="1352233407699" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;JavaSim/resources/FirstDef.brite&apos; to &apos;First.brite&apos;" description="Rename resource &apos;FirstDef.brite&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="resources/FirstDef.brite" name="First.brite" stamp="1352233422352" updateReferences="true"/>
+</session>

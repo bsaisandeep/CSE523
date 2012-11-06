@@ -1,0 +1,85 @@
+Router0
+object : 1	 Next Hop : 2	 No. of hops : 2
+object : 2	 Next Hop : 2	 No. of hops : 1
+object : 3	 Next Hop : 2	 No. of hops : 2
+object : 4	 Next Hop : 2	 No. of hops : 2
+object : 5	 Next Hop : 2	 No. of hops : 3
+object : 6	 Next Hop : 2	 No. of hops : 3
+object : 7	 Next Hop : 2	 No. of hops : 3
+object : 9	 Next Hop : 2	 No. of hops : 2
+object : 10	 Next Hop : 2	 No. of hops : 1
+Router1
+object : 0	 Next Hop : 2	 No. of hops : 2
+object : 2	 Next Hop : 2	 No. of hops : 1
+object : 3	 Next Hop : 2	 No. of hops : 2
+object : 4	 Next Hop : 2	 No. of hops : 2
+object : 5	 Next Hop : 2	 No. of hops : 3
+object : 6	 Next Hop : 2	 No. of hops : 3
+object : 7	 Next Hop : 2	 No. of hops : 3
+object : 8	 Next Hop : 2	 No. of hops : 2
+object : 10	 Next Hop : 2	 No. of hops : 1
+Router2
+object : 0	 Next Hop : 0	 No. of hops : 1
+object : 1	 Next Hop : 1	 No. of hops : 1
+object : 3	 Next Hop : 3	 No. of hops : 1
+object : 4	 Next Hop : 4	 No. of hops : 1
+object : 5	 Next Hop : 3	 No. of hops : 2
+object : 6	 Next Hop : 4	 No. of hops : 2
+object : 7	 Next Hop : 4	 No. of hops : 2
+object : 8	 Next Hop : 0	 No. of hops : 1
+object : 9	 Next Hop : 1	 No. of hops : 1
+Router3
+object : 0	 Next Hop : 2	 No. of hops : 2
+object : 1	 Next Hop : 2	 No. of hops : 2
+object : 2	 Next Hop : 2	 No. of hops : 1
+object : 4	 Next Hop : 4	 No. of hops : 1
+object : 5	 Next Hop : 5	 No. of hops : 1
+object : 6	 Next Hop : 4	 No. of hops : 2
+object : 7	 Next Hop : 4	 No. of hops : 2
+object : 8	 Next Hop : 2	 No. of hops : 2
+object : 9	 Next Hop : 2	 No. of hops : 2
+object : 10	 Next Hop : 2	 No. of hops : 1
+Router4
+object : 0	 Next Hop : 2	 No. of hops : 2
+object : 1	 Next Hop : 2	 No. of hops : 2
+object : 2	 Next Hop : 2	 No. of hops : 1
+object : 3	 Next Hop : 3	 No. of hops : 1
+object : 5	 Next Hop : 3	 No. of hops : 2
+object : 6	 Next Hop : 6	 No. of hops : 1
+object : 7	 Next Hop : 7	 No. of hops : 1
+object : 8	 Next Hop : 2	 No. of hops : 2
+object : 9	 Next Hop : 2	 No. of hops : 2
+object : 10	 Next Hop : 2	 No. of hops : 1
+Router5
+object : 0	 Next Hop : 3	 No. of hops : 3
+object : 1	 Next Hop : 3	 No. of hops : 3
+object : 2	 Next Hop : 3	 No. of hops : 2
+object : 3	 Next Hop : 3	 No. of hops : 1
+object : 4	 Next Hop : 3	 No. of hops : 2
+object : 6	 Next Hop : 7	 No. of hops : 3
+object : 7	 Next Hop : 7	 No. of hops : 1
+object : 8	 Next Hop : 3	 No. of hops : 3
+object : 9	 Next Hop : 3	 No. of hops : 3
+object : 10	 Next Hop : 3	 No. of hops : 2
+Router6
+object : 0	 Next Hop : 4	 No. of hops : 3
+object : 1	 Next Hop : 4	 No. of hops : 3
+object : 2	 Next Hop : 4	 No. of hops : 2
+object : 3	 Next Hop : 4	 No. of hops : 2
+object : 4	 Next Hop : 4	 No. of hops : 1
+object : 5	 Next Hop : 4	 No. of hops : 3
+object : 7	 Next Hop : 4	 No. of hops : 2
+object : 8	 Next Hop : 4	 No. of hops : 3
+object : 9	 Next Hop : 4	 No. of hops : 3
+object : 10	 Next Hop : 4	 No. of hops : 2
+Router7
+object : 0	 Next Hop : 4	 No. of hops : 3
+object : 1	 Next Hop : 4	 No. of hops : 3
+object : 2	 Next Hop : 4	 No. of hops : 2
+object : 3	 Next Hop : 5	 No. of hops : 2
+object : 4	 Next Hop : 4	 No. of hops : 1
+object : 5	 Next Hop : 5	 No. of hops : 1
+object : 6	 Next Hop : 4	 No. of hops : 2
+object : 8	 Next Hop : 4	 No. of hops : 3
+object : 9	 Next Hop : 4	 No. of hops : 3
+object : 10	 Next Hop : 4	 No. of hops : 2
